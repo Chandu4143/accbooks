@@ -47,26 +47,26 @@ function App() {
       <Routes>
         {/* Auth Routes */}
         <Route element={<AuthLayout />}>
-          <Route path="/signin" element={!user ? <SignIn /> : <Navigate to="/dashboard" replace />} />
-          <Route path="/signup" element={!user ? <SignUp /> : <Navigate to="/dashboard" replace />} />
-          <Route path="/forgot-password" element={!user ? <ForgotPassword /> : <Navigate to="/dashboard" replace />} />
-          <Route path="/reset-password" element={!user ? <ResetPassword /> : <Navigate to="/dashboard" replace />} />
+          <Route path="/signin" element={!user ? <SignIn /> : <Navigate to="/dashboard\" replace />} />
+          <Route path="/signup" element={!user ? <SignUp /> : <Navigate to="/dashboard\" replace />} />
+          <Route path="/forgot-password" element={!user ? <ForgotPassword /> : <Navigate to="/dashboard\" replace />} />
+          <Route path="/reset-password" element={!user ? <ResetPassword /> : <Navigate to="/dashboard\" replace />} />
         </Route>
 
         {/* Protected Routes */}
         <Route element={<DashboardLayout />}>
-          <Route path="/dashboard" element={user ? <Dashboard /> : <Navigate to="/signin" replace />} />
-          <Route path="/company-settings" element={user ? <CompanySettings /> : <Navigate to="/signin" replace />} />
-          <Route path="/chart-of-accounts" element={user ? <ChartOfAccounts /> : <Navigate to="/signin" replace />} />
-          <Route path="/products-services" element={user ? <ProductsServices /> : <Navigate to="/signin" replace />} />
-          <Route path="/invoices" element={user ? <Invoices /> : <Navigate to="/signin" replace />} />
-          <Route path="/invoices/new" element={user ? <CreateEditInvoice /> : <Navigate to="/signin" replace />} />
-          <Route path="/invoices/:id" element={user ? <CreateEditInvoice /> : <Navigate to="/signin" replace />} />
-          <Route path="/expenses" element={user ? <Expenses /> : <Navigate to="/signin" replace />} />
-          <Route path="/expenses/new" element={user ? <CreateEditExpense /> : <Navigate to="/signin" replace />} />
-          <Route path="/expenses/:id" element={user ? <CreateEditExpense /> : <Navigate to="/signin" replace />} />
-          <Route path="/reports/profit-loss" element={user ? <ProfitLossReport /> : <Navigate to="/signin" replace />} />
-          <Route path="/reports/gst" element={user ? <GSTReport /> : <Navigate to="/signin" replace />} />
+          <Route path="/dashboard" element={user ? <Dashboard /> : <Navigate to="/signin\" replace />} />
+          <Route path="/company-settings" element={user ? <CompanySettings /> : <Navigate to="/signin\" replace />} />
+          <Route path="/chart-of-accounts" element={user ? <ChartOfAccounts /> : <Navigate to="/signin\" replace />} />
+          <Route path="/products-services" element={user ? <ProductsServices /> : <Navigate to="/signin\" replace />} />
+          <Route path="/invoices" element={user ? <Invoices /> : <Navigate to="/signin\" replace />} />
+          <Route path="/invoices/new" element={user ? <CreateEditInvoice /> : <Navigate to="/signin\" replace />} />
+          <Route path="/invoices/:id" element={user ? <CreateEditInvoice /> : <Navigate to="/signin\" replace />} />
+          <Route path="/expenses" element={user ? <Expenses /> : <Navigate to="/signin\" replace />} />
+          <Route path="/expenses/new" element={user ? <CreateEditExpense /> : <Navigate to="/signin\" replace />} />
+          <Route path="/expenses/:id" element={user ? <CreateEditExpense /> : <Navigate to="/signin\" replace />} />
+          <Route path="/reports/profit-loss" element={user ? <ProfitLossReport /> : <Navigate to="/signin\" replace />} />
+          <Route path="/reports/gst" element={user ? <GSTReport /> : <Navigate to="/signin\" replace />} />
         </Route>
 
         {/* Default Route */}
