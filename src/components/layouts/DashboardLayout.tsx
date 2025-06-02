@@ -98,7 +98,7 @@ const DashboardLayout: React.FC = () => {
         className={`
           fixed inset-y-0 left-0 z-30 w-64 transform bg-white shadow-lg transition-transform duration-300 ease-in-out
           ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}
-          lg:translate-x-0 lg:static lg:h-screen lg:z-10
+          lg:translate-x-0
         `}
       >
         <div className="flex h-full flex-col overflow-y-auto">
