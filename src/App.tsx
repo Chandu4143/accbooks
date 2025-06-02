@@ -20,8 +20,8 @@ const Invoices = lazy(() => import('./pages/invoices/Invoices'));
 const CreateEditInvoice = lazy(() => import('./pages/invoices/CreateEditInvoice'));
 const Expenses = lazy(() => import('./pages/expenses/Expenses'));
 const CreateEditExpense = lazy(() => import('./pages/expenses/CreateEditExpense'));
-const ProfitLossReport = lazy(() => import('./pages/reports/ProfitLossReport'));
-const GSTReport = lazy(() => import('./pages/reports/GSTReport'));
+// const ProfitLossReport = lazy(() => import('./pages/reports/ProfitLossReport'));
+// const GSTReport = lazy(() => import('./pages/reports/GSTReport'));
 
 function App() {
   const { user, loading, checkAuth } = useAuth();
@@ -55,18 +55,18 @@ function App() {
 
         {/* Protected Routes */}
         <Route element={<DashboardLayout />}>
-          <Route path="/dashboard" element={user ? <Dashboard /> : <Navigate to="/signin\" replace />} />
-          <Route path="/company-settings" element={user ? <CompanySettings /> : <Navigate to="/signin\" replace />} />
-          <Route path="/chart-of-accounts" element={user ? <ChartOfAccounts /> : <Navigate to="/signin\" replace />} />
-          <Route path="/products-services" element={user ? <ProductsServices /> : <Navigate to="/signin\" replace />} />
-          <Route path="/invoices" element={user ? <Invoices /> : <Navigate to="/signin\" replace />} />
-          <Route path="/invoices/new" element={user ? <CreateEditInvoice /> : <Navigate to="/signin\" replace />} />
-          <Route path="/invoices/:id" element={user ? <CreateEditInvoice /> : <Navigate to="/signin\" replace />} />
-          <Route path="/expenses" element={user ? <Expenses /> : <Navigate to="/signin\" replace />} />
-          <Route path="/expenses/new" element={user ? <CreateEditExpense /> : <Navigate to="/signin\" replace />} />
-          <Route path="/expenses/:id" element={user ? <CreateEditExpense /> : <Navigate to="/signin\" replace />} />
-          <Route path="/reports/profit-loss" element={user ? <ProfitLossReport /> : <Navigate to="/signin\" replace />} />
-          <Route path="/reports/gst" element={user ? <GSTReport /> : <Navigate to="/signin\" replace />} />
+          <Route path="/dashboard" element={user ? <Dashboard /> : <Navigate to="/signin" replace />} />
+          <Route path="/company-settings" element={user ? <CompanySettings /> : <Navigate to="/signin" replace />} />
+          <Route path="/chart-of-accounts" element={user ? <ChartOfAccounts /> : <Navigate to="/signin" replace />} />
+          <Route path="/products-services" element={user ? <ProductsServices /> : <Navigate to="/signin" replace />} />
+          <Route path="/invoices" element={user ? <Invoices /> : <Navigate to="/signin" replace />} />
+          <Route path="/invoices/new" element={user ? <CreateEditInvoice /> : <Navigate to="/signin" replace />} />
+          <Route path="/invoices/:id" element={user ? <CreateEditInvoice /> : <Navigate to="/signin" replace />} />
+          <Route path="/expenses" element={user ? <Expenses /> : <Navigate to="/signin" replace />} />
+          <Route path="/expenses/new" element={user ? <CreateEditExpense /> : <Navigate to="/signin" replace />} />
+          <Route path="/expenses/:id" element={user ? <CreateEditExpense /> : <Navigate to="/signin" replace />} />
+          {/* <Route path="/reports/profit-loss" element={user ? <ProfitLossReport /> : <Navigate to="/signin" replace />} /> */}
+          {/* <Route path="/reports/gst" element={user ? <GSTReport /> : <Navigate to="/signin" replace />} /> */}
         </Route>
 
         {/* Default Route */}
