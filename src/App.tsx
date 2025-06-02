@@ -20,8 +20,8 @@ const Invoices = lazy(() => import('./pages/invoices/Invoices'));
 const CreateEditInvoice = lazy(() => import('./pages/invoices/CreateEditInvoice'));
 const Expenses = lazy(() => import('./pages/expenses/Expenses'));
 const CreateEditExpense = lazy(() => import('./pages/expenses/CreateEditExpense'));
-// const ProfitLossReport = lazy(() => import('./pages/reports/ProfitLossReport'));
-// const GSTReport = lazy(() => import('./pages/reports/GSTReport'));
+const ProfitLossReport = lazy(() => import('./pages/reports/ProfitLossReport'));
+const GSTReport = lazy(() => import('./pages/reports/GSTReport'));
 
 function App() {
   const { user, loading, checkAuth } = useAuth();
@@ -47,10 +47,10 @@ function App() {
       <Routes>
         {/* Auth Routes */}
         <Route element={<AuthLayout />}>
-          <Route path="/signin" element={!user ? <SignIn /> : <Navigate to="/dashboard\" replace />} />
-          <Route path="/signup" element={!user ? <SignUp /> : <Navigate to="/dashboard\" replace />} />
-          <Route path="/forgot-password" element={!user ? <ForgotPassword /> : <Navigate to="/dashboard\" replace />} />
-          <Route path="/reset-password" element={!user ? <ResetPassword /> : <Navigate to="/dashboard\" replace />} />
+          <Route path="/signin" element={!user ? <SignIn /> : <Navigate to="/dashboard" replace />} />
+          <Route path="/signup" element={!user ? <SignUp /> : <Navigate to="/dashboard" replace />} />
+          <Route path="/forgot-password" element={!user ? <ForgotPassword /> : <Navigate to="/dashboard" replace />} />
+          <Route path="/reset-password" element={!user ? <ResetPassword /> : <Navigate to="/dashboard" replace />} />
         </Route>
 
         {/* Protected Routes */}
@@ -65,8 +65,8 @@ function App() {
           <Route path="/expenses" element={user ? <Expenses /> : <Navigate to="/signin" replace />} />
           <Route path="/expenses/new" element={user ? <CreateEditExpense /> : <Navigate to="/signin" replace />} />
           <Route path="/expenses/:id" element={user ? <CreateEditExpense /> : <Navigate to="/signin" replace />} />
-          {/* <Route path="/reports/profit-loss" element={user ? <ProfitLossReport /> : <Navigate to="/signin" replace />} /> */}
-          {/* <Route path="/reports/gst" element={user ? <GSTReport /> : <Navigate to="/signin" replace />} /> */}
+          <Route path="/reports/profit-loss" element={user ? <ProfitLossReport /> : <Navigate to="/signin" replace />} />
+          <Route path="/reports/gst" element={user ? <GSTReport /> : <Navigate to="/signin" replace />} />
         </Route>
 
         {/* Default Route */}
